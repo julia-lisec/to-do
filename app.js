@@ -13,8 +13,25 @@ let editFlag = false;
 let editID = '';
 
 // ****** EVENT LISTENERS **********
+// submit form
+form.addEventListener('submit', addItem)
 
 // ****** FUNCTIONS **********
+function addItem(e) {
+  e.preventDefault();
+  const value = grocery.value;
+  const id = new Date().getTime().toString();
+
+  if(value && !editFlag) {
+
+  }
+  else if(value && editFlag === true) {
+
+  }
+  else {
+
+  }
+}
 
 // ****** LOCAL STORAGE **********
 
