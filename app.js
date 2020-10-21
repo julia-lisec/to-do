@@ -43,6 +43,13 @@ function addItem(e) {
         <button type="button" class="delete-btn"><i class="fas fa-trash"></i></button>
       </div>`;
 
+    const deleteBtn = element.querySelector('.delete-btn');
+    const editBtn = element.querySelector('.edit-btn');
+
+    deleteBtn.addEventListener('click', deleteItem);
+    editBtn.addEventListener('click', editItem);
+
+
     // append child
     list.appendChild(element);
 
@@ -54,6 +61,16 @@ function addItem(e) {
 
     // add to local storage
     addToLocalStorage(id, value);
+
+    // delete function
+    function deleteItem() {
+      console.log('item deleted');
+    };
+
+    // edit function
+    function editItem() {
+      console.log('edit ');
+    };
 
     // set back to default
     setBackToDefault();
