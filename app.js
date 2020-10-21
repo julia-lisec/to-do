@@ -69,7 +69,9 @@ function addItem(e) {
       if (list.children.length === 0) {
         container.classList.remove('show-container');
       }
-    };
+      displayAlert('item removed', 'danger');
+      setBackToDefault();
+    }
 
     // edit function
     function editItem() {
