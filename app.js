@@ -79,7 +79,8 @@ function addItem(e) {
 
     // edit function
     function editItem() {
-      console.log('edit item');
+      const element = e.currentTarget.parentElement.parentElement;
+
     };
 
     // set back to default
