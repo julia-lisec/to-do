@@ -63,13 +63,14 @@ function addItem(e) {
     addToLocalStorage(id, value);
 
     // delete function
-    function deleteItem() {
-      console.log('item deleted');
+    function deleteItem(e) {
+      const element = e.currentTarget.parentElement.parentElement;
+      list.removeChild(element);
     };
 
     // edit function
     function editItem() {
-      console.log('edit ');
+      console.log('edit item');
     };
 
     // set back to default
