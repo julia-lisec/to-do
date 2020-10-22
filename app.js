@@ -15,7 +15,6 @@ let editID = '';
 // ****** EVENT LISTENERS **********
 // submit form
 form.addEventListener('submit', addItem)
-
 // clear items
 clearBtn.addEventListener('click', clearItems);
 
@@ -30,7 +29,6 @@ function addItem(e) {
 
     // add class
     element.classList.add('grocery-item');
-
     // add id
     const attr = document.createAttribute('data-id');
     attr.value = id;
@@ -52,13 +50,10 @@ function addItem(e) {
 
     // append child
     list.appendChild(element);
-
     // display alert
     displayAlert('item added to the list', 'success');
-
     // show container
     container.classList.add('show-container');
-
     // add to local storage
     addToLocalStorage(id, value);
 
@@ -78,16 +73,23 @@ function addItem(e) {
     }
 
     // edit function
-    function editItem() {
+    function editItem(e) {
       const element = e.currentTarget.parentElement.parentElement;
-
+      // set edit item
+      editElement = e.currentTarget.parentElement.previousElementSibling;
+      // set form values
+      grocery.value = editElement.innerHTML;
+      editFlag = true;
+      editID = element.dataset.id;
+      submitBtn.textContent = "edit";
     };
 
     // set back to default
     setBackToDefault();
   }
   else if(value && editFlag) {
-
+    editElement.innerHTML = value;
+    displayAlert('value changed', 'success');
   }
   else {
     displayAlert('please enter value', 'danger');
