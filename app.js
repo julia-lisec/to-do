@@ -90,6 +90,9 @@ function addItem(e) {
   else if(value && editFlag) {
     editElement.innerHTML = value;
     displayAlert('value changed', 'success');
+    // edit local storage
+    editLocalStorage(editID, value);
+    setBackToDefault();
   }
   else {
     displayAlert('please enter value', 'danger');
@@ -138,5 +141,9 @@ function addToLocalStorage(id, value) {
 
 function removeFromLocalStorage(id) {
 
+}
+
+function editLocalStorage(id, value) {
+  
 }
 // ****** SETUP ITEMS **********
