@@ -69,7 +69,7 @@ function addItem(e) {
       setBackToDefault();
 
       // remove from local storage
-      // removeFromLocalStorage(id);
+      removeFromLocalStorage(id);
     }
 
     // edit function
@@ -143,7 +143,16 @@ function addToLocalStorage(id, value) {
 }
 
 function removeFromLocalStorage(id) {
-}
+    let items = getLocalStorage();
+
+    items = items.filter(function (item) {
+      if (item.id !== id) {
+        return item;
+      }
+    });
+
+    localStorage.setItem("list", JSON.stringify(items));
+  }
 
 function editLocalStorage(id, value) {
 
